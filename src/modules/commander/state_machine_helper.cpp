@@ -699,11 +699,8 @@ bool check_invalid_pos_nav_state(vehicle_status_s &status, bool old_failsafe, or
 			if (status_flags.local_position_valid) {
 				status.nav_state = vehicle_status_s::NAVIGATION_STATE_AUTO_LAND;
 
-			} else if (status_flags.local_altitude_valid) {
+			} else  {
 
-				status.nav_state = vehicle_status_s::NAVIGATION_STATE_DESCEND;
-
-			} else {
 				status.nav_state = vehicle_status_s::NAVIGATION_STATE_TERMINATION;
 			}
 		}
